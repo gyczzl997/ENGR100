@@ -235,3 +235,13 @@ Fs = uicontrol('Style','Pushbutton','Position',[530 300 80 40],'String','1/4','C
 
 Fs.BackgroundColor = [0 0 0];
 Fs.ForegroundColor = [1 1 1];
+
+%Pulldown menu
+H=uicontrol('Style','Popup','Position',[620 250 100 50],'String','guitar|clarinet|trumpet|tone');
+pause;I=get(H,'Value');
+
+%create end key
+endkey = uicontrol('Style','Pushbutton','Position',[0 0 300 25],'String','END','Callback', ...
+'sound(X); save proj3.mat X;');
+
+endkey.BackgroundColor = [0 1 1];
