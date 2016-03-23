@@ -3,16 +3,12 @@ X = [];
 Var = [392, 418, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 798];
 
 X = [];
-% Low G, A flat, A, A#, B, C, D flat, D, D#, E, F, F#, G 
-Var = [392, 418, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 798];
-
-X = [];
 %create low G key
-lG = uicontrol('Style','Pushbutton','Position',[0 100 80 40],'String','G','Callback', ...
+uicontrol('Style','Pushbutton','Position',[0 100 80 40],'String','G','Callback', ...
 'Z=cos(2*pi*392*[1:2000]/7999);X=[X Z];sound(Z,7999);');
 
 %create A key
-A = uicontrol('Style','Pushbutton','Position',[80 100 80 40],'String','A','Callback', ...
+uicontrol('Style','Pushbutton','Position',[80 100 80 40],'String','A','Callback', ...
 'Z=cos(2*pi*440*[1:2000]/7999);X=[X Z];sound(Z,7999);');
 
 %create B key
