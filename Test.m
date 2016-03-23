@@ -106,3 +106,45 @@ uicontrol('Style','Pushbutton','Position',[560 180 80 40],'String','1/4','Callba
 %create 1/4 High G key
 uicontrol('Style','Pushbutton','Position',[560 180 80 40],'String','1/4','Callback', ...
 'Z=cos(2*pi*798*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+%create G sharp key
+Gs = uicontrol('Style','Pushbutton','Position',[50 220 80 40],'String','G#','Callback', ...
+'Z=cos(2*pi*418*[1:2000]/7999);X=[X Z];sound(Z,7999);');
+
+Gs.BackgroundColor = [0 0 0];
+Gs.ForegroundColor = [1 1 1];
+
+%create 1/2 G sharp key
+Gs = uicontrol('Style','Pushbutton','Position',[50 260 80 40],'String','1/2','Callback', ...
+'Z=cos(2*pi*418*[1:1000]/7999);X=[X Z];sound(Z,7999);');
+
+Gs.BackgroundColor = [0 0 0];
+Gs.ForegroundColor = [1 1 1];
+
+%create 1/4 G sharp key
+Gs = uicontrol('Style','Pushbutton','Position',[50 300 80 40],'String','1/4','Callback', ...
+'Z=cos(2*pi*418*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+Gs.BackgroundColor = [0 0 0];
+Gs.ForegroundColor = [1 1 1];
+
+%create A sharp key
+As = uicontrol('Style','Pushbutton','Position',[130 220 80 40],'String','A#','Callback', ...
+'Z=cos(2*pi*466*[1:2000]/7999);X=[X Z];sound(Z,7999);');
+
+As.BackgroundColor = [0 0 0];
+As.ForegroundColor = [1 1 1];
+
+%create 1/2 A sharp key
+As = uicontrol('Style','Pushbutton','Position',[130 260 80 40],'String','1/2','Callback', ...
+'Z=cos(2*pi*466*[1:1000]/7999);X=[X Z];sound(Z,7999);');
+
+As.BackgroundColor = [0 0 0];
+As.ForegroundColor = [1 1 1];
+
+%create A sharp key
+As = uicontrol('Style','Pushbutton','Position',[130 300 80 40],'String','1/4','Callback', ...
+'Z=cos(2*pi*466*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+As.BackgroundColor = [0 0 0];
+As.ForegroundColor = [1 1 1];
