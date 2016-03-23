@@ -142,9 +142,72 @@ As = uicontrol('Style','Pushbutton','Position',[130 260 80 40],'String','1/2','C
 As.BackgroundColor = [0 0 0];
 As.ForegroundColor = [1 1 1];
 
-%create A sharp key
+%create 1/4 A sharp key
 As = uicontrol('Style','Pushbutton','Position',[130 300 80 40],'String','1/4','Callback', ...
 'Z=cos(2*pi*466*[1:500]/7999);X=[X Z];sound(Z,7999);');
 
 As.BackgroundColor = [0 0 0];
 As.ForegroundColor = [1 1 1];
+
+%create C sharp key
+Cs = uicontrol('Style','Pushbutton','Position',[290 220 80 40],'String','C#','Callback', ...
+'Z=cos(2*pi*554*[1:2000]/7999);X=[X Z];sound(Z,7999);');
+
+Cs.BackgroundColor = [0 0 0];
+Cs.ForegroundColor = [1 1 1];
+
+%create 1/2 C sharp key
+Cs = uicontrol('Style','Pushbutton','Position',[290 260 80 40],'String','1/2','Callback', ...
+'Z=cos(2*pi*554*[1:1000]/7999);X=[X Z];sound(Z,7999);');
+
+Cs.BackgroundColor = [0 0 0];
+Cs.ForegroundColor = [1 1 1];
+
+%create 1/4 C sharp key
+Cs = uicontrol('Style','Pushbutton','Position',[290 300 80 40],'String','1/4','Callback', ...
+'Z=cos(2*pi*554*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+Cs.BackgroundColor = [0 0 0];
+Cs.ForegroundColor = [1 1 1];
+
+%create D sharp key
+Ds = uicontrol('Style','Pushbutton','Position',[370 220 80 40],'String','D#','Callback', ...
+'Z=cos(2*pi*622*[1:2000]/7999);X=[X Z];sound(Z,7999);');
+
+Ds.BackgroundColor = [0 0 0];
+Ds.ForegroundColor = [1 1 1];
+
+%create 1/2 D sharp key
+Ds = uicontrol('Style','Pushbutton','Position',[370 260 80 40],'String','1/2','Callback', ...
+'Z=cos(2*pi*622*[1:1000]/7999);X=[X Z];sound(Z,7999);');
+
+Ds.BackgroundColor = [0 0 0];
+Ds.ForegroundColor = [1 1 1];
+
+%create 1/2 D sharp key
+Ds = uicontrol('Style','Pushbutton','Position',[370 300 80 40],'String','1/4','Callback', ...
+'Z=cos(2*pi*622*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+Ds.BackgroundColor = [0 0 0];
+Ds.ForegroundColor = [1 1 1];
+
+%create F# key
+Fs = uicontrol('Style','Pushbutton','Position',[530 220 80 40],'String','F#','Callback', ...
+'Z=cos(2*pi*740*[1:2000]/7999);X=[X Z];sound(Z,7999);');
+
+Fs.BackgroundColor = [0 0 0];
+Fs.ForegroundColor = [1 1 1];
+
+%create 1/2 F# key
+Fs = uicontrol('Style','Pushbutton','Position',[530 260 80 40],'String','1/2','Callback', ...
+'Z=cos(2*pi*740*[1:1000]/7999);X=[X Z];sound(Z,7999);');
+
+Fs.BackgroundColor = [0 0 0];
+Fs.ForegroundColor = [1 1 1];
+
+%create 1/4 F# key
+Fs = uicontrol('Style','Pushbutton','Position',[530 300 80 40],'String','1/4','Callback', ...
+'Z=cos(2*pi*740*[1:500]/7999);X=[X Z];sound(Z,7999);');
+
+Fs.BackgroundColor = [0 0 0];
+Fs.ForegroundColor = [1 1 1];
