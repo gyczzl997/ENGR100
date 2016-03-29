@@ -1,3 +1,9 @@
+function Synthesizer(A)
+
+H=uicontrol('Style','Popup','Position',[500 250 100 50],'String','guitar|clarinet|trumpet|tone');
+I=get(H,'Value');
+
+
 X = [];
 % Low G, A flat, A, A#, B, C, D flat, D, D#, E, F, F#, G 
 Var = [392, 418, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 798];
@@ -5,7 +11,7 @@ Var = [392, 418, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 798];
 X = [];
 %create low G key
 lG = uicontrol('Style','Pushbutton','Position',[0 100 80 40],'String','G','Callback', ...
-'Z=cos(2*pi*392*[1:32668]/7999);X=[X Z];sound(Z,7999);');
+    {@PressButton, 1, 1});
 
 lG.BackgroundColor = [1 1 1];
 lG.ForegroundColor = [0 0 0];
@@ -236,12 +242,38 @@ Fs = uicontrol('Style','Pushbutton','Position',[530 300 80 40],'String','1/4','C
 Fs.BackgroundColor = [0 0 0];
 Fs.ForegroundColor = [1 1 1];
 
-%Pulldown menu
-H=uicontrol('Style','Popup','Position',[620 250 100 50],'String','guitar|clarinet|trumpet|tone');
-pause;I=get(H,'Value');
+%
+% var : This must be voorresponding to the indices of Var vector
+%     : Input 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12 or 13 
+% node : Represent the length of the node  
+%      : Input 1, 2 or 4  
+%        1. Whole 2. Half 4. Quoter
+%
+%
+%
+%
 
-%create end key
-endkey = uicontrol('Style','Pushbutton','Position',[0 0 300 25],'String','END','Callback', ...
-'sound(X); save proj3.mat X;');
+function PressButton(hObject, evt, var_in, node)
+I = get(H,'Value');
+(1 + 32668*(var_in - 1))
+(32688 * (var_in - 1) + 32668 / node)
 
-endkey.BackgroundColor = [0 1 1];
+if (node == 1)
+    %B = (1 + 32668*(var_in - 1)): (32688 * (var_in - 1) + 32668 / node);
+
+    Z = A((1 + 32668*(var_in - 1)): (32688 * (var_in - 1) + 32668 / node));
+    %((1 + 32668*(var_in - 1)): (32688 * (var_in - 1) + 32668 / node)); 
+elseif(node == 2)
+    Z = A(424944 * 1 + 1 + 32668*(var_in - 1): 32688 * (var_in - 1) + 32668 / node); 
+elseif(node == 3)  
+    Z = A(424944 * 2 + 1 + 32668*(var_in - 1): 32688 * (var_in - 1) + 32668 / node); 
+else
+    Z = cos(2 * pi*Var(var_in) * [1:32668]/7999);
+    Z = [Z zeros(1,100)];
+end
+
+X=[X Z];
+sound(Z);
+clear Z;
+end
+end
